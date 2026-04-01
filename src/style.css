@@ -7,10 +7,10 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  color: var(--main-color);
 }
 
 header {
+  color: var(--main-color);
   display: flex;
   justify-content: space-between;
   align-content: baseline;
@@ -23,15 +23,13 @@ ul {
   height: 60px;
   margin: 0;
   align-items: baseline;
-  align-content: baseline;
   text-transform:uppercase;
 }
 
 li {
   display: flex;
   margin: 0 10px;
-  /* align-items: stretch; */
-}
+ }
 
 img {
   margin: 10px 0;
@@ -45,8 +43,8 @@ img {
 
 .is-active {
   padding:  50% 0;
-  border-bottom: 4px solid var(--secondary-color);
   color: var(--secondary-color);
+  position: relative;
 }
 
 .nav__link:hover {
@@ -54,5 +52,12 @@ img {
 }
 
 .is-active::after {
-  position: relative;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  content: '';
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  bottom: 0;
+  width: 100%;
 }
